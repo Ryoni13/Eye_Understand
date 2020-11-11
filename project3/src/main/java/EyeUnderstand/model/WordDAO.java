@@ -14,11 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import EyeUnderstand.model.MemberVO;
+import java.io.InputStream;
+
 
 @Repository
 // DB연결하는 객체
 // mybatis.org(환경설정, 3개)
-public class MemberDAO {
+public class WordDAO {
 	@Autowired
 	private SqlSessionFactory sqlSessionFactory;
 	
@@ -39,16 +41,6 @@ public class MemberDAO {
 		return vo1;
 	}*/
 
-
-	   public MemberVO login(MemberVO vo) {
-		   	
-		      System.out.println("id : " + vo.getId());
-		      System.out.println("pw : " + vo.getPw());
-		      SqlSession session = sqlSessionFactory.openSession();
-		      MemberVO vo1 = session.selectOne("memberLogin", vo);
-		      session.close();
-		      return vo1;
-		   }
 	   public String[] getTestList(){
 		   	  SqlSession session = sqlSessionFactory.openSession();
 		      List<WordVO> list = session.selectList("getTestList");
@@ -59,5 +51,17 @@ public class MemberDAO {
 		      session.close(); // 반납
 		      return list2;
 		   }
+	  /* public String[] selectList(){
+		      SqlSession session = sqlSessionFactory.openSession();      
+		      List<WordVO> list = session.selectList("selectList");
+		      String[] list2 = new String[list.size()]; 
+		      for (int i=0; i<list.size(); i++) {
+		         System.out.println(list.get(i).getWords());
+		         list2[i] = list.get(i).getWords();
+		      }
+		      session.close(); // 반납
+		      return list2;
+		   }*/
+
 	
 }

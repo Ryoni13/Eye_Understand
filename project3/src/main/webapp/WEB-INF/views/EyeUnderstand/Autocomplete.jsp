@@ -1,6 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +17,8 @@
 <body>
    <!-- <input id="searchInput"> -->
 
-   <form action="memberMapper.xml">
-      <input id="searchInput"> <input type="submit">
+   <form action="${path}/list.do" method="post">
+      <input id="searchInput" name="words"> <input type="submit">
    </form>
 
 

@@ -2,23 +2,22 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="EyeUnderstand.mybatis.EyeUnderstand">
-    
-    <select id = "memberLogin"  parameterType="MemberVO" resultType="MemberVO">
-        
-		select * from eyemember where ID=#{id, jdbcType=VARCHAR} and PW=#{pw, jdbcType=VARCHAR}
-    </select>
+<mapper namespace="EyeUnderstand.mybatis.EyeunderstandMapper">
 
-    <select id="getTestList" parameterType ="java.util.Map" resultType="EyeUnderstand.model.testVO">
-      select * from work where work like ('${serchInput}%')
-   </select>
-    
-    
-	<!-- <select id="getTimeList" resultType="TimeAirVO">
-		select * from airtime order by start_place
+	<select id="memberLogin" parameterType="MemberVO"
+		resultType="MemberVO">
+		select * from eyemember where ID=#{id, jdbcType=VARCHAR}
+		and PW=#{pw, jdbcType=VARCHAR}
 	</select>
 
-	<select id="timeSearch" parameterType="TimeAirVO" resultType="TimeAirVO">
-		select * from airtime where start_place=#{start_place} and end_place=#{end_place}
-	</select> -->
+	<select id="getTestList" parameterType="java.util.Map"
+		resultType="WordVO">
+		select * from word where words like ('${serchInput}%')
+	</select>
+
+
+	<!-- <select id="getTimeList" resultType="TimeAirVO"> select * from airtime 
+		order by start_place </select> <select id="timeSearch" parameterType="TimeAirVO" 
+		resultType="TimeAirVO"> select * from airtime where start_place=#{start_place} 
+		and end_place=#{end_place} </select> -->
 </mapper>
