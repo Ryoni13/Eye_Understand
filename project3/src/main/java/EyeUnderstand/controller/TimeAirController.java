@@ -1,4 +1,4 @@
-package air.korea.controller;
+package EyeUnderstand.controller;
 
 import java.util.List;
 
@@ -10,21 +10,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import air.korea.model.MemberVO;
-import air.korea.model.TimeAirVO;
-import air.korea.model.TimeAirDAO;
+import EyeUnderstand.model.MemberDAO;
 
 @Controller
 public class TimeAirController {
 	@Autowired
-	private TimeAirDAO dao;
+	private MemberDAO dao;
 	
-	@RequestMapping("/list.do")
+/*	@RequestMapping("/list.do")
 	public String list(Model model) {
 		List<TimeAirVO> list = dao.getTimeList();
 		model.addAttribute("getTimelist", list);
 		return "TimeAir/TimeAirList";
-	}
+	}*/
 	
 	
 	@RequestMapping("/timeSearch.do")
@@ -70,7 +68,7 @@ public class TimeAirController {
 //}
 
 	
-	@RequestMapping("/getTimeSearch.do")
+/*	@RequestMapping("/getTimeSearch.do")
 	public String timeSearch_detail(Model model, HttpServletRequest request) {
 		int start = Integer.parseInt(request.getParameter("start"));
 		int end = Integer.parseInt(request.getParameter("end"));
@@ -78,5 +76,5 @@ public class TimeAirController {
 		TimeAirVO vo1 = dao.getTimeSearch(vo);
 		model.addAttribute("timeSearch", vo1);
 		return "TimeAir/flyresult";
-	}
+	}*/
 }
