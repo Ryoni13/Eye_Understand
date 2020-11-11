@@ -82,7 +82,7 @@
       <p class="lead text-muted">감정 또는 요청 </p>
       <p>
         <a href="emoticon.do" class="btn btn-secondary my-2" >감정</a>
-        <a href="objects.do" class="btn btn-secondary my-2" style="color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd">요청</a>
+        <a href="request.do" class="btn btn-secondary my-2" style="color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd">요청</a>
       </p>
     </div>
   </section> 
@@ -93,28 +93,20 @@
       <div class="row">
       
         <div class="col-md-3" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+        <button class="card mb-4 shadow-sm glasses" value="안경 주세요" style="border: 0px" onclick="location.href='#'">
           <div>
            <svg width="250px" height="200px" viewBox="0 0 16 16" class="bi bi-eyeglasses" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-			 <path fill-rule="evenodd" d="M4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/>
-		   </svg>
+          <path fill-rule="evenodd" d="M4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/>
+         </svg>
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">안경</p>
-              
-              <!-- <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div> -->
             </div>
           </div>
           </button>
         </div>
         
              <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+          <button class="card mb-4 shadow-sm bathroom" value="화장실 가고싶어요" style="border: 0px" onclick="location.href='#'">
           <div>
            <img src="resources/img/toilet.svg" alt="" style="width:250px; height:200px;">
             <div class="card-body">
@@ -125,7 +117,7 @@
         </div>
         
         <div class="col-md-3">
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+        <button class="card mb-4 shadow-sm bed_up" value="침대 올려주세요" style="border: 0px" onclick="location.href='#'">
           <div>
            <img src="resources/img/bed-up.svg" alt="" style="width:250px; height:200px;">
             <div class="card-body">
@@ -136,7 +128,7 @@
         </div>
         
         <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+          <button class="card mb-4 shadow-sm youtube" value="유튜브 틀어주세요" style="border: 0px" onclick="location.href='#'">
           <div>
             <img src="resources/img/youtube.svg" alt="" style="width:250px; height:200px;">
             <div class="card-body">
@@ -147,7 +139,7 @@
         </div>
         
         <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+          <button class="card mb-4 shadow-sm phlegm" value="가래 뽑아주세요" style="border: 0px" onclick="location.href='#'">
           <div>
            <img src="resources/img/cough.svg" alt="" style="width:250px; height:200px;">
             <div class="card-body">
@@ -156,20 +148,9 @@
           </div>
           </button>
         </div>
-        
-      <!--   <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           
-            <div class="card-body">
-              <p class="card-text">목말라요</p>
-            </div>
-          </div>
-          </button>
-        </div> -->
 
         <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+          <button class="card mb-4 shadow-sm breath" value="호홉 불편해요" style="border: 0px" onclick="location.href='#'">
           <div>
            <img src="resources/img/bad-breath2.svg" alt="" style="width:250px; height:200px;">
             <div class="card-body">
@@ -180,7 +161,7 @@
         </div>
         
         <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+          <button class="card mb-4 shadow-sm bed_down" value="침대 내려주세요" style="border: 0px" onclick="location.href='#'">
           <div>
            <img src="resources/img/bed.svg" alt="" style="width:250px; height:200px;">
             <div class="card-body">
@@ -191,7 +172,7 @@
         </div>
         
         <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+          <button class="card mb-4 shadow-sm position" value="자세 불편해요" style="border: 0px" onclick="location.href='#'">
           <div>
            <img src="resources/img/patient2.svg" alt="" style="width:250px; height:200px;">
             <div class="card-body">
@@ -204,18 +185,106 @@
       </div>
     </div>
   </div>
-
 </main>
 
-<!-- <footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
-  </div>
-</footer> -->
+<script>
+    function speak(text, opt_prop) {
+        if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+            alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+            return
+        }
+        console.log(opt_prop)
+        
+        window.speechSynthesis.cancel() // 현재 읽고있다면 초기화
+
+        const prop = opt_prop || {}
+
+        const speechMsg = new SpeechSynthesisUtterance()
+        speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+        speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+        speechMsg.lang = prop.lang || "ko-KR"
+        speechMsg.text = text
+        
+        // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+        window.speechSynthesis.speak(speechMsg)
+    }
+
+
+    // 이벤트 영역
+
+    const glasses = document.getElementsByClassName("glasses")[0]
+    const bathroom = document.getElementsByClassName("bathroom")[0]
+    const bed_up = document.getElementsByClassName("bed_up")[0]
+    const youtube = document.getElementsByClassName("youtube")[0]
+    const phlegm = document.getElementsByClassName("phlegm")[0]
+    const breath = document.getElementsByClassName("breath")[0]
+    const bed_down = document.getElementsByClassName("bed_down")[0]
+    const position = document.getElementsByClassName("position")[0]
+
+    glasses.addEventListener("click", e => {
+        speak(glasses.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+    
+    bathroom.addEventListener("click", e => {
+        speak(bathroom.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    bed_up.addEventListener("click", e => {
+        speak(bed_up.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    youtube.addEventListener("click", e => {
+        speak(youtube.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    phlegm.addEventListener("click", e => {
+        speak(phlegm.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    breath.addEventListener("click", e => {
+        speak(breath.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    bed_down.addEventListener("click", e => {
+        speak(bed_down.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    position.addEventListener("click", e => {
+        speak(position.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="resources/js/bootstrap.bundle.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="resources/js/bootstrap.bundle.min.js"></script>
 </html>
