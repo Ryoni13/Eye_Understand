@@ -2,15 +2,20 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="air.korea.mybatis.TimeAirMapper">
+<mapper namespace="EyeUnderstand.mybatis.EyeUnderstand">
+    
+    <select id = "memberLogin"  parameterType="MemberVO" resultType="MemberVO">
+        
+		select * from eyemember where ID=#{id, jdbcType=VARCHAR} and PW=#{pw, jdbcType=VARCHAR}
+    </select>
 
     
     
-	<select id="getTimeList" resultType="TimeAirVO">
+	<!-- <select id="getTimeList" resultType="TimeAirVO">
 		select * from airtime order by start_place
 	</select>
 
 	<select id="timeSearch" parameterType="TimeAirVO" resultType="TimeAirVO">
 		select * from airtime where start_place=#{start_place} and end_place=#{end_place}
-	</select>
+	</select> -->
 </mapper>
