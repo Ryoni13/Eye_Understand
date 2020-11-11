@@ -5,13 +5,13 @@
    xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
    http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
    
-    <context:component-scan base-package="air.korea.model"/>
+    <context:component-scan base-package="EyeUnderstand.model"/>
     
    <!-- Root Context: defines shared resources visible to all other web components -->
    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
        <property name="dataSource" ref="dataSource"/> 
        <property name="configLocation" value="/WEB-INF/mybatis/mybatis-config.xml"/> 
-       <property name="mapperLocations" value="classpath:air/korea/mybatis/*.xml"/>       
+       <property name="mapperLocations" value="classpath:EyeUnderstand/mybatis/*.xml"/>       
    </bean>   
    
    <!--  jdbc -->

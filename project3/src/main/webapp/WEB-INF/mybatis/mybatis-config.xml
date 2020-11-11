@@ -4,6 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-      <typeAlias type="air.korea.model.TimeAirVO" alias="TimeAirVO"/>
+      <typeAlias type="EyeUnderstand.model.MemberVO" alias="MemberVO"/>
   </typeAliases>
 </configuration>

@@ -5,6 +5,7 @@ parttime varchar2(100) not null,
 bigo varchar2(100) not null
 )
 
+select * from eyemember
 select * from airtime
 
 insert into airtime values(0, 1, '7:00, 8:00, 13:00, 17:00', '출발지 광주 : 도착지 서울');

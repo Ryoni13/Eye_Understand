@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!doctype html>
 <html lang="en">
   <head>
@@ -49,7 +49,7 @@
     <link href="resources/css/signin.css" rel="stylesheet">
   </head>
   <body class="text-center" style="font-family: 'KOTRA_BOLD-Bold';">
-    <form class="form-signin">
+    <form class="form-signin" action="${path}/login_check.do" method="post">
       <!-- <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
     <!-- <svg width="100px" height="100px" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
@@ -60,16 +60,18 @@
     </svg>
 
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputId" class="sr-only">ID</label>
+  <input type="id" id="inputEmail" name = "id" class="form-control" placeholder="ID" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <input type="password" id="inputPassword" name = "pw" class="form-control" placeholder="Password" required>
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
     </label>
   </div>
+  <a href="login_check.do">
   <button class="btn btn-lg btn-primary btn-block" type="submit" style="color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd" >Sign in</button>
+  </a>
   <p class="mt-5 mb-3 text-muted">Eye Understand</p>
 </form>
 <!-- Optional JavaScript -->
