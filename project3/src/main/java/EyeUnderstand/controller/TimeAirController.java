@@ -3,14 +3,17 @@ package EyeUnderstand.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import EyeUnderstand.model.MemberDAO;
+import EyeUnderstand.model.MemberVO;
 
 @Controller
 public class TimeAirController {
@@ -29,10 +32,26 @@ public class TimeAirController {
 	public String timeSearch() {
 		return "TimeAir/fly";
 	}
-	@RequestMapping("/index.do")
+	@RequestMapping("/login.do")
 	public String index() {
 		return "EyeUnderstand/sign-in";
 	}
+	 @RequestMapping("login_check.do")
+	   public String login_check(MemberVO vo, HttpSession session,RedirectAttributes rttr ) {
+	      
+	      MemberVO vo1 = dao.login(vo);
+	      System.out.println(vo1);
+	      if (vo1 == null){
+	         session.setAttribute("vo", vo1);
+	         rttr.addFlashAttribute("msg", false);
+	         return "EyeUnderstand/sign-in";
+	      }else if(vo.getId().equals(vo1.getId()) && vo.getPw().equals(vo1.getPw())){
+	         session.setAttribute("vo", vo1);
+	         
+	         return "redirect:cover.do";
+	      }
+	      return "EyeUnderstand/cover";
+	   }
 	@RequestMapping("/cover.do")
 	public String cover() {
 		return "EyeUnderstand/cover";
