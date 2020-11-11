@@ -16,7 +16,7 @@ import EyeUnderstand.model.MemberDAO;
 import EyeUnderstand.model.MemberVO;
 
 @Controller
-public class TimeAirController {
+public class EyeUnderstandController {
 	@Autowired
 	private MemberDAO dao;
 	
@@ -26,6 +26,16 @@ public class TimeAirController {
 		model.addAttribute("getTimelist", list);
 		return "TimeAir/TimeAirList";
 	}*/
+	
+	public String list(Model model) {
+	      /*List<MemberVO> list = dao.getAllList();
+	      model.addAttribute("list", list);
+	      List<TimeAirVO> list2 = dao.getTimeList();
+	      model.addAttribute("timelist", list2);*/
+	      String[] list3 = dao.getTestList();
+	      model.addAttribute("testlist", list3);
+	      return "member/memberList";
+	   }
 	
 	
 	@RequestMapping("/timeSearch.do")

@@ -49,6 +49,15 @@ public class MemberDAO {
 		      session.close();
 		      return vo1;
 		   }
-	
+	   public String[] getTestList(){
+		      SqlSession session = sqlSessionFactory.openSession();
+		      List<testVO> list = session.selectList("getTestList");
+		      String[] list2 = new String[list.size()]; 
+		      for (int i=0; i<list.size(); i++) {
+		         list2[i] = list.get(i).getWork();
+		      }
+		      session.close(); // 반납
+		      return list2;
+		   }
 	
 }
