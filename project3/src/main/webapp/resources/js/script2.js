@@ -87,8 +87,10 @@ function VKI_buildKeyboardInputs() {
       document.getElementsByTagName('input'),
       document.getElementsByTagName('textarea'),
     ]
-    var ele =document.getElementById('test'); 
-    ele.click();
+    var e = jQuery.Event( "keypress", { keyCode: 40 } ); 
+    $("#test").trigger(e);
+    /*var ele =document.getElementById('test'); 
+    ele.click();*/
     for (var x = 0, inputCount = 0, elem; elem = inputElems[x++];) {
       if (elem) {
         for (var y = 0, keyid = "", ex; ex = elem[y++];) {
@@ -102,10 +104,12 @@ function VKI_buildKeyboardInputs() {
                 keybut.alt = "Keyboard interface";
                 keybut.className = "keyboardInputInitiator";
                 keybut.title = "Display graphical keyboard interface";
+                
+                
                 keybut.onclick = (function(a) { return function() { self.VKI_show(a); }; })(keyid);
-            ex.parentNode.insertBefore(keybut, ex.nextSibling);
-            if (!window.sidebar && !window.opera) {
-              ex.onclick = ex.onkeyup = ex.onselect = function() {
+	            ex.parentNode.insertBefore(keybut, ex.nextSibling);
+	            if (!window.sidebar && !window.opera) {
+	              ex.onclick = ex.onkeyup = ex.onselect = function() {
                 if (self.VKI_target.createTextRange) self.VKI_range = document.selection.createRange();
               };
             }
@@ -419,6 +423,8 @@ function VKI_buildKeyboardInputs() {
         eng_span.value+=text
   
         englishToKorean(this.VKI_target,eng_span)
+        var e = jQuery.Event( "keypress", { keyCode: 40 } ); 
+        $("#test").trigger(e);
       }
     };
   

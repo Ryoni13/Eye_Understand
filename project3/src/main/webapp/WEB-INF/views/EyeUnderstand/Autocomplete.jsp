@@ -84,7 +84,7 @@
 <body style="font-family: 'KOTRA_BOLD-Bold';">
  <!-- 키보드 -->
     <form action="${path}/list.do" method="post">
-    	<input class="keyboardInput searchInput" id="test" type="text" onchange="auto()" name = "words" value="" required>
+    	<input class="keyboardInput searchInput" id="test" type="text" name = "words" value="" required>
    		<input type="hidden" id="eng_text" readonly>
    		<input type="submit">
    </form>
@@ -156,12 +156,33 @@
     
 </body>
  <script>
-/* 
-$("#test").trigger("click");
-	document.getElementById("test")[0].click(); */
-	
-      $(function auto() {    //화면 다 뜨면 시작
-         <%String[] arr = (String[]) request.getAttribute("testlist");%>
+ 
+/* 	$(document).ready(function(){
+		$("#test").bind("click",function(){
+			alert("클릭!")
+		});
+		$("#test").trigger("click");
+		}); */
+		/* 
+
+		$(document).keydown(function(event) {
+			if (event.keyCode == 40) {
+				alert("keypressed");
+				$(document).trigger(e);
+			}
+		});
+
+		function clickevent() {
+			var e = $.Event("keydown");
+			e.keyCode = 40;
+			$(document).trigger(e);
+		} */
+ function trigger(){
+	    document.getElementById("test").click();
+	}
+
+		$(function auto() { //화면 다 뜨면 시작
+	<%String[] arr = (String[]) request.getAttribute("testlist");%>
                var searchSource = [];
             <%for (int i = 0; i < arr.length; i++) {%>
             
@@ -195,5 +216,19 @@ $("#test").trigger("click");
              }
          });
       });
+		
+		/* var e = jQuery.Event( "keypress", { keyCode: 40 } ); 
+		$("#test").trigger(e);
+
+		var event = document.createEvent("Events");
+		event.initEvent('keydown', true, true);
+		event.keyCode = 40;
+		document.getElementById('test').dispatchEvent(event); */
+		
+		$(function() {
+		    var e = $.Event('keypress');
+		    e.which = 40; // Enter
+		    $('#test').trigger(e);
+		});//자동으로 방향키입력 키보드안쓰고 마우스만 사용해야 먹음.
    </script>
 </html>
