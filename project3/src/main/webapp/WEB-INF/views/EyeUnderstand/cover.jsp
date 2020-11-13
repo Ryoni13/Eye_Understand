@@ -68,7 +68,7 @@
     <h3 class="cover-heading" style="margin-bottom: 50px; line-height: 2em;" >간단한 감정표현부터 하고싶은 말까지 <br>당신의 눈으로 편리하게 의사표현할수있어요.</h3>
     <p class="lead"></p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary" style="font-size: 30px;">
+      <a href="choice.do" class="btn btn-lg btn-secondary" style="font-size: 30px;">
        <img class="img" src="resources/img/eye.svg" alt="" style="width:250px; height:200px;">
       </a>
     </p>

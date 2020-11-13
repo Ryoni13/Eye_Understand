@@ -3,13 +3,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <!-- 메타태그를 이용하여 IE의 문서모드를 고정 -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +22,7 @@
    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://unpkg.com/hangul-js" type="text/javascript"></script>
 <script src="resources/js/script2.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -83,7 +84,7 @@
 <body style="font-family: 'KOTRA_BOLD-Bold';">
  <!-- 키보드 -->
     <form action="${path}/list.do" method="post">
-    	<input class="keyboardInput searchInput" type="text" name = "words" value="" required>
+    	<input class="keyboardInput searchInput" id="test" type="text" onchange="auto()" name = "words" value="" required>
    		<input type="hidden" id="eng_text" readonly>
    		<input type="submit">
    </form>
@@ -105,7 +106,7 @@
           <div>
            <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
             <div class="card-body">
-              <p class="card-text" style="font-size:24px;">행복해요</p>
+              <p class="card-text" style="font-size:24px;">슬퍼요</p>
                </div>
           </div>
           </button>
@@ -115,7 +116,7 @@
           <div>
            <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
             <div class="card-body">
-              <p class="card-text" style="font-size:24px;">행복해요</p>
+              <p class="card-text" style="font-size:24px;">짜증나요</p>
                </div>
           </div>
           </button>
@@ -125,7 +126,7 @@
           <div>
            <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
             <div class="card-body">
-              <p class="card-text" style="font-size:24px;">행복해요</p>
+              <p class="card-text" style="font-size:24px;">배고파요</p>
                </div>
           </div>
           </button>
@@ -135,7 +136,7 @@
           <div>
            <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
             <div class="card-body">
-              <p class="card-text" style="font-size:24px;">행복해요</p>
+              <p class="card-text" style="font-size:24px;">띵깡똥</p>
                </div>
           </div>
           </button>
@@ -145,7 +146,7 @@
           <div>
            <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
             <div class="card-body">
-              <p class="card-text" style="font-size:24px;">행복해요</p>
+              <p class="card-text" style="font-size:24px;">뿌링클</p>
                </div>
           </div>
           </button>
@@ -155,16 +156,18 @@
     
 </body>
  <script>
-
-      
-      $(function() {    //화면 다 뜨면 시작
+/* 
+$("#test").trigger("click");
+	document.getElementById("test")[0].click(); */
+	
+      $(function auto() {    //화면 다 뜨면 시작
          <%String[] arr = (String[]) request.getAttribute("testlist");%>
                var searchSource = [];
             <%for (int i = 0; i < arr.length; i++) {%>
             
                searchSource.push("<%=arr[i]%>");
-         console.log(searchSource);
    <%}%>
+         console.log(searchSource);
       
    <%-- var searchSource = <%=arr2.get(0)%>; // 배열 형태로  --%>
       $(".searchInput").autocomplete({//오토 컴플릿트 시작

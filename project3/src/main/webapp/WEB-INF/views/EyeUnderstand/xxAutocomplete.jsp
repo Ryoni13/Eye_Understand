@@ -32,8 +32,8 @@
             <%for (int i = 0; i < arr.length; i++) {%>
             
                searchSource.push("<%=arr[i]%>");
-         console.log(searchSource);
    <%}%>
+         console.log(searchSource);
       
    <%-- var searchSource = <%=arr2.get(0)%>; // 배열 형태로  --%>
       $("#searchInput").autocomplete({//오토 컴플릿트 시작

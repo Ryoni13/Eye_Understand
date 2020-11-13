@@ -87,6 +87,8 @@ function VKI_buildKeyboardInputs() {
       document.getElementsByTagName('input'),
       document.getElementsByTagName('textarea'),
     ]
+    var ele =document.getElementById('test'); 
+    ele.click();
     for (var x = 0, inputCount = 0, elem; elem = inputElems[x++];) {
       if (elem) {
         for (var y = 0, keyid = "", ex; ex = elem[y++];) {

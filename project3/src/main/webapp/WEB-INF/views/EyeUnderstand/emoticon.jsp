@@ -62,7 +62,7 @@
       </div>
     </div>
   </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
+<!--   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container d-flex justify-content-between">
       <a href="cover.do" class="navbar-brand d-flex align-items-center" style="font-size:24px;">
         <strong>Eye-contect</strong>
@@ -71,18 +71,18 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-  </div>
+  </div> -->
 </header>
 
 <main role="main">
 
-  <section class="jumbotron text-center">
-    <div class="container">
+  <section class="jumbotron text-center" style="height:300px; padding-top: 50px;">
+    <div class="container" style="height:200px">
       <h1>의사표현</h1>
       <p class="lead text-muted">감정 또는 요청 </p>
       <p>
-        <a href="emoticon.do" class="btn btn-primary my-2" style="color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd">감정</a>
-        <a href="request.do" class="btn btn-secondary my-2">요청</a>
+        <a href="request.do" class="btn btn-primary my-2" style="padding-top:15px; font-size:50px; color: #424242; width:150px; height:100px; margin-right:100px; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd">요청</a>
+        <a href="emoticon.do" class="btn btn-secondary my-2" style="padding-top:15px; font-size:50px; width:150px; height:100px;">감정</a>
       </p>
     </div>
   </section> 
@@ -95,7 +95,7 @@
         <div class="col-md-3" >
         <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/smiling.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/smiling.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">행복해요</p>
               
@@ -113,7 +113,7 @@
         <div class="col-md-3">
         <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/crying.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/crying.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">슬퍼요</p>
             </div>
@@ -123,7 +123,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
-            <img src="resources/img/confused.svg" alt="" style="width:250px; height:200px;">
+            <img src="resources/img/confused.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">짜증나요</p>
             </div>
@@ -134,7 +134,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/in-love.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/in-love.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">사랑해요</p>
             </div>
@@ -145,7 +145,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/sleeping.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/sleeping.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">졸려요</p>
             </div>
@@ -167,7 +167,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/grinning.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/grinning.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">고마워요</p>
             </div>
@@ -178,7 +178,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/laughing.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/laughing.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">멋져요</p>
             </div>
@@ -189,7 +189,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/joy.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/joy.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">기뻐요</p>
             </div>

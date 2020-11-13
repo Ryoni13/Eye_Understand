@@ -62,7 +62,7 @@
       </div>
     </div>
   </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
+ <!--  <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container d-flex justify-content-between">
       <a href="cover.do" class="navbar-brand d-flex align-items-center"  style="font-size:24px;">
         <strong>Eye-contect</strong>
@@ -71,18 +71,18 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-  </div>
+  </div> -->
 </header>
 
 <main role="main">
 
-  <section class="jumbotron text-center">
-    <div class="container">
+  <section class="jumbotron text-center" style="height:300px; padding-top: 50px;">
+    <div class="container" style="height:200px">
       <h1>의사표현</h1>
       <p class="lead text-muted">감정 또는 요청 </p>
       <p>
-        <a href="emoticon.do" class="btn btn-secondary my-2" >감정</a>
-        <a href="request.do" class="btn btn-secondary my-2" style="color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd">요청</a>
+        <a href="request.do" class="btn btn-secondary my-2" style="padding-top:15px; font-size:50px; width:150px; height:100px; margin-right:100px">요청</a>
+        <a href="emoticon.do" class="btn btn-secondary my-2" style="padding-top:15px; font-size:50px; width:150px; height:100px; color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd">감정</a>
       </p>
     </div>
   </section> 
@@ -108,7 +108,7 @@
              <div class="col-md-3">
           <button class="card mb-4 shadow-sm bathroom" value="화장실 가고싶어요" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/toilet.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/toilet.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">화장실</p>
             </div>
@@ -119,7 +119,7 @@
         <div class="col-md-3">
         <button class="card mb-4 shadow-sm bed_up" value="침대 올려주세요" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/bed-up.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/bed-up.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">침대 올려주세요</p>
             </div>
@@ -130,7 +130,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm youtube" value="유튜브 틀어주세요" style="border: 0px" onclick="location.href='#'">
           <div>
-            <img src="resources/img/youtube.svg" alt="" style="width:250px; height:200px;">
+            <img src="resources/img/youtube.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">유투브 틀어주세요</p>
             </div>
@@ -141,7 +141,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm phlegm" value="가래 뽑아주세요" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/cough.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/cough.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">가래 뽑아주세요</p>
             </div>
@@ -152,7 +152,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm breath" value="호홉 불편해요" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/bad-breath2.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/bad-breath2.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">호흡 불편해요</p>
             </div>
@@ -163,7 +163,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm bed_down" value="침대 내려주세요" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/bed.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/bed.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">침대 내려주세요</p>
             </div>
@@ -174,7 +174,7 @@
         <div class="col-md-3">
           <button class="card mb-4 shadow-sm position" value="자세 불편해요" style="border: 0px" onclick="location.href='#'">
           <div>
-           <img src="resources/img/patient2.svg" alt="" style="width:250px; height:200px;">
+           <img src="resources/img/patient2.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
             <div class="card-body">
               <p class="card-text" style="font-size:24px;">자세 불편해요</p>
             </div>

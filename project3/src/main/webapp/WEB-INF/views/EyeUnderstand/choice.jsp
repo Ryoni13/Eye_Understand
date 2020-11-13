@@ -73,7 +73,7 @@
     </div>
    </div>
   </button> 
-  <button class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border: 0px" onclick="location.href='keyboard.do'">
+  <button class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="border: 0px" onclick="location.href='Autocomplete.do'">
   <div>
     <div class="my-3 p-3">
       <h2 class="display-5">키보드</h2>

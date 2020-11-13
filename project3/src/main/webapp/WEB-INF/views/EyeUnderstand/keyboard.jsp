@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@page import="java.util.ArrayList"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,13 +10,10 @@
     <meta name="viewport" content="width=device-width" initial-scale="1.0" minimum-scale="1.0" maximum-scale="1.0" user-scalable="no">
     <title>testDoc</title>
     <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
-	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	    
-	    <script type='text/javascript' src="hangul.js"></script>
-	    <script type='text/javascript' src="jquery.secureKeyboard.js"></script>
-	    <script type='text/javascript' src="crypto.js"></script>
-	<!-- or from CDN -->
-	<script src="https://unpkg.com/hangul-js" type="text/javascript"></script>
+       <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+       
+   <!-- or from CDN -->
+   <script src="https://unpkg.com/hangul-js" type="text/javascript"></script>
 
     <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
     <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.1.css">
@@ -27,6 +24,8 @@
     <script type="text/javascript" src="resources/js/crypto.js"></script>
     <script type='text/javascript' src="resources/js/hangul.js"></script>
     <script type='text/javascript' src='resources/js/jquery.secureKeyboard.js'></script>
+    
+    
     <style>
 
         body{
@@ -64,9 +63,9 @@
     <textarea class="tv2" rows="8" cols="30" readonly="true"
               placeholder="decrypted value in form"></textarea>
     <fieldset>
-        <form class="input1" method="post">
+        <form class="input1" action="${path}/keyboard.do" method="post">
             <label for="name">단어만 :</label>
-            <input class="nameField" type="text" id="name" readonly="readonly"/><br>
+            <input class="nameField searchInput" name="words" type="text" id="name" readonly="readonly"/><br>
             <label for="hangul">풀 자판 :</label>
             <input class="hangulField" type="text" id="hangul" readonly="readonly"/><br>
             <label for="pwd">숫자 입력(비밀번호) :</label>
@@ -98,5 +97,6 @@
 
 
 </script>
+
 </body>
 </html>

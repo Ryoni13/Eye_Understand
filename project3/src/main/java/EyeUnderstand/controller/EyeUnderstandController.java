@@ -61,7 +61,9 @@ public class EyeUnderstandController {
 	}
 
 	@RequestMapping("/keyboard.do")
-	public String keyboard() {
+	public String keyboard(Model model) {
+		String[] list3 = dao.getTestList();
+		model.addAttribute("testlist", list3);
 		return "EyeUnderstand/keyboard";
 	}
 
