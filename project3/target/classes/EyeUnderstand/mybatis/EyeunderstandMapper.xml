@@ -4,9 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="EyeUnderstand.mybatis.EyeunderstandMapper">
 
-	<!-- <select id="selectPoint" parameterType="FavoriteVO">
-	    select POINT favorite where FAVORITEWORD = #{FAVORITEWORD}
-	</select>    --> 
     
 	<select id="memberLogin" parameterType="MemberVO"
 		resultType="MemberVO">
@@ -19,9 +16,15 @@
 		select * from word where words like ('${serchInput}%')
 	</select>
 	
-	<insert id="favoriteInsert" parameterType="FavoriteVO">
-        insert into favorite values 
-        (#{ID, jdbcType=VARCHAR}, #{FAVORITEWORD, jdbcType=VARCHAR}, #{POINT, jdbcType=INTEGER})
-    </insert>
+	<!-- <select id = "" >
+	    select POINT 
+	    
+	</select> -->
+	
+	<update id="favoriteInsert" parameterType="FavoriteVO"> 
+        MERGE INTO favorite USING DUAL ON (FAVORITEWORD = #{FAVORITEWORD})
+		WHEN MATCHED THEN UPDATE SET POINT = (select POINT from favorite where FAVORITEWORD = #{FAVORITEWORD})+1
+		WHEN NOT MATCHED THEN INSERT (ID, FAVORITEWORD, POINT) VALUES (#{ID},#{FAVORITEWORD},#{POINT})
+    </update>
 
 </mapper>

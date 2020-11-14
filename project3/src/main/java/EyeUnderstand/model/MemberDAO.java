@@ -50,14 +50,14 @@ public class MemberDAO {
 		      session.close();
 		      return vo1;
 		   }
-	   public int favoriteInsert(FavoriteVO vo) {
+	   public FavoriteVO favoriteInsert(FavoriteVO vo) {
 		      System.out.println("insert");
 		      SqlSession session = sqlSessionFactory.openSession();
-		      int cnt = session.insert("favoriteInsert", vo);
+		      session.insert("favoriteInsert", vo);
 		      session.commit();
 		      session.close();
 		      System.out.println("insert 완료");
-		      return cnt;
+		      return vo;
 		   }
 	   public String[] getTestList(){
 		   	  SqlSession session = sqlSessionFactory.openSession();

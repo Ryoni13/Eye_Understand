@@ -92,7 +92,7 @@ System.out.println("키보드페이지 ID >>>>> " + vo.getId());
 
 %>
  <!-- 키보드 -->
-    <form action="${path}/favorite_insert.do"" method="post">
+    <form action="${path}/favorite_insert.do" method="post">
    		<input type="hidden" id="eng_text" readonly>
     	<input class="keyboardInput searchInput" id="test" type="text" name = "favoriteword" value="" required>
    		<a href="favorite_insert.do">
@@ -102,14 +102,12 @@ System.out.println("키보드페이지 ID >>>>> " + vo.getId());
    
     <div class="container">
       <div class="row">
-      <div class="col-md-2" >
-      <a href="favorite_update.do">
-        <button class="card mb-4 shadow-sm" type="submit" style="border: 0px" onclick="location.href='#'"></button>
-        </a>
+        <div class="col-md-2" >
+        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
           <div>
            <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
             <div class="card-body">
-              <p class="card-text" style="font-size:24px;">행복해요</p>
+              <p class="card-text" style="font-size:24px;">슬퍼요</p>
                </div>
           </div>
           </button>

@@ -35,26 +35,23 @@ public class EyeUnderstandController {
 		
 		System.out.println("ID >>>>>>>>>>>>> " + vo.getId());
 		String id = vo.getId();
-		
-		int cnt = 0;
-		FavoriteVO f_vo = new FavoriteVO(id, favoriteword, cnt);
+		FavoriteVO f_vo = new FavoriteVO(id, favoriteword, 1);
 		
 		System.out.println("id >>>>>>>>>>>>>>>> " + id);
 		System.out.println("favoriteword >>>>>> "+ favoriteword);
-		System.out.println("cnt >>>>>>>>>>>>>>> " + cnt);
 		
 		dao.favoriteInsert(f_vo);
 		session.setAttribute("vo", vo);
 		
-		model.addAttribute("vo", vo);
+//		model.addAttribute("vo", f_vo);
 		
-	return "redirect:list.do";
+		return "redirect:list.do";
 	}
-	/*@RequestMapping("/favorite_update.do")
+	@RequestMapping("/favorite_update.do")
 	public String favorite_update(HttpServletRequest request , HttpSession session, RedirectAttributes rttr, Model model) {
 		
 		return "redirect:list.do";
-	}*/
+	}
 
 	@RequestMapping("/login.do")
 	public String login() {
