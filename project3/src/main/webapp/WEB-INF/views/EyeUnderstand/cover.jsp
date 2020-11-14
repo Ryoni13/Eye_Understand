@@ -1,3 +1,4 @@
+<%@page import="EyeUnderstand.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -40,6 +41,13 @@
     <link href="resources/css/cover.css" rel="stylesheet">
 </head>
 <body class="text-center" style="font-family: 'KOTRA_BOLD-Bold'; background-color: #fff; color: #212529;">
+
+
+	<%
+		MemberVO vo = (MemberVO) session.getAttribute("vo");
+	System.out.println("cover ID >>>>> " + vo.getId());
+	
+	%>
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">

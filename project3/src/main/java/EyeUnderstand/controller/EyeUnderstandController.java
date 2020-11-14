@@ -12,9 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import EyeUnderstand.model.FavoriteVO;
 import EyeUnderstand.model.MemberDAO;
 import EyeUnderstand.model.MemberVO;
-import EyeUnderstand.model.WordDAO;
 
 @Controller
 public class EyeUnderstandController {
@@ -27,6 +27,34 @@ public class EyeUnderstandController {
 		model.addAttribute("testlist", list3);
 		return "EyeUnderstand/Autocomplete";
 	}
+	
+	@RequestMapping("/favorite_insert.do")
+	public String favorite_insert(HttpServletRequest request , HttpSession session, RedirectAttributes rttr, Model model) {
+		String favoriteword = request.getParameter("favoriteword");
+		MemberVO vo = (MemberVO) session.getAttribute("vo");
+		
+		System.out.println("ID >>>>>>>>>>>>> " + vo.getId());
+		String id = vo.getId();
+		
+		int cnt = 0;
+		FavoriteVO f_vo = new FavoriteVO(id, favoriteword, cnt);
+		
+		System.out.println("id >>>>>>>>>>>>>>>> " + id);
+		System.out.println("favoriteword >>>>>> "+ favoriteword);
+		System.out.println("cnt >>>>>>>>>>>>>>> " + cnt);
+		
+		dao.favoriteInsert(f_vo);
+		session.setAttribute("vo", vo);
+		
+		model.addAttribute("vo", vo);
+		
+	return "redirect:list.do";
+	}
+	/*@RequestMapping("/favorite_update.do")
+	public String favorite_update(HttpServletRequest request , HttpSession session, RedirectAttributes rttr, Model model) {
+		
+		return "redirect:list.do";
+	}*/
 
 	@RequestMapping("/login.do")
 	public String login() {
@@ -49,7 +77,8 @@ public class EyeUnderstandController {
 		}
 		return "EyeUnderstand/cover";
 	}
-
+	
+	
 	@RequestMapping("/cover.do")
 	public String cover() {
 		return "EyeUnderstand/cover";
@@ -60,12 +89,6 @@ public class EyeUnderstandController {
 		return "EyeUnderstand/choice";
 	}
 
-	@RequestMapping("/keyboard.do")
-	public String keyboard(Model model) {
-		String[] list3 = dao.getTestList();
-		model.addAttribute("testlist", list3);
-		return "EyeUnderstand/keyboard";
-	}
 
 	@RequestMapping("/emoticon.do")
 	public String emoticon() {
@@ -77,25 +100,4 @@ public class EyeUnderstandController {
 		return "EyeUnderstand/request";
 	}
 	
-
-//@GetMapping("/")
-//public String index(HttpServletRequest request) {
-//    logger.debug("###INDEX PAGE###");
-//    String rtnPage = "index";
-//    String ipAddress = request.getHeader("X-FORWARDED-FOR");
-//    if (ipAddress == null) {
-//        ipAddress = request.getRemoteAddr();
-//    }
-//    logger.info(ipAddress + " : " + rtnPage);
-//    return rtnPage;
-//}
-
-	/*
-	 * @RequestMapping("/getTimeSearch.do") public String timeSearch_detail(Model
-	 * model, HttpServletRequest request) { int start =
-	 * Integer.parseInt(request.getParameter("start")); int end =
-	 * Integer.parseInt(request.getParameter("end")); TimeAirVO vo = new
-	 * TimeAirVO(start, end, null, null); TimeAirVO vo1 = dao.getTimeSearch(vo);
-	 * model.addAttribute("timeSearch", vo1); return "TimeAir/flyresult"; }
-	 */
 }

@@ -3,6 +3,8 @@ package EyeUnderstand.model;
    public class WordVO {
    
    private String words;
+   
+   
 
 	public WordVO(String words) {
 		this.words = words;

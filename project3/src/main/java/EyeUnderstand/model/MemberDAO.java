@@ -19,6 +19,7 @@ import EyeUnderstand.model.MemberVO;
 // DB연결하는 객체
 // mybatis.org(환경설정, 3개)
 public class MemberDAO {
+	
 	@Autowired
 	private SqlSessionFactory sqlSessionFactory;
 	
@@ -48,6 +49,15 @@ public class MemberDAO {
 		      MemberVO vo1 = session.selectOne("memberLogin", vo);
 		      session.close();
 		      return vo1;
+		   }
+	   public int favoriteInsert(FavoriteVO vo) {
+		      System.out.println("insert");
+		      SqlSession session = sqlSessionFactory.openSession();
+		      int cnt = session.insert("favoriteInsert", vo);
+		      session.commit();
+		      session.close();
+		      System.out.println("insert 완료");
+		      return cnt;
 		   }
 	   public String[] getTestList(){
 		   	  SqlSession session = sqlSessionFactory.openSession();

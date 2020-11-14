@@ -4,6 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="EyeUnderstand.mybatis.EyeunderstandMapper">
 
+	<!-- <select id="selectPoint" parameterType="FavoriteVO">
+	    select POINT favorite where FAVORITEWORD = #{FAVORITEWORD}
+	</select>    --> 
+    
 	<select id="memberLogin" parameterType="MemberVO"
 		resultType="MemberVO">
 		select * from eyemember where ID=#{id, jdbcType=VARCHAR}
@@ -14,10 +18,10 @@
 		resultType="WordVO">
 		select * from word where words like ('${serchInput}%')
 	</select>
+	
+	<insert id="favoriteInsert" parameterType="FavoriteVO">
+        insert into favorite values 
+        (#{ID, jdbcType=VARCHAR}, #{FAVORITEWORD, jdbcType=VARCHAR}, #{POINT, jdbcType=INTEGER})
+    </insert>
 
-
-	<!-- <select id="getTimeList" resultType="TimeAirVO"> select * from airtime 
-		order by start_place </select> <select id="timeSearch" parameterType="TimeAirVO" 
-		resultType="TimeAirVO"> select * from airtime where start_place=#{start_place} 
-		and end_place=#{end_place} </select> -->
 </mapper>

@@ -1,7 +1,8 @@
+<%@page import="EyeUnderstand.model.MemberVO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,17 +83,29 @@
 </style>
 </head>
 <body style="font-family: 'KOTRA_BOLD-Bold';">
+
+
+<%
+  MemberVO vo = (MemberVO) session.getAttribute("vo");
+
+System.out.println("키보드페이지 ID >>>>> " + vo.getId());
+
+%>
  <!-- 키보드 -->
-    <form action="${path}/list.do" method="post">
-    	<input class="keyboardInput searchInput" id="test" type="text" name = "words" value="" required>
+    <form action="${path}/favorite_insert.do"" method="post">
    		<input type="hidden" id="eng_text" readonly>
-   		<input type="submit">
+    	<input class="keyboardInput searchInput" id="test" type="text" name = "favoriteword" value="" required>
+   		<a href="favorite_insert.do">
+   		<button type="submit" style="color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd">click</button>
+   		</a>
    </form>
    
     <div class="container">
       <div class="row">
       <div class="col-md-2" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
+      <a href="favorite_update.do">
+        <button class="card mb-4 shadow-sm" type="submit" style="border: 0px" onclick="location.href='#'"></button>
+        </a>
           <div>
            <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
             <div class="card-body">

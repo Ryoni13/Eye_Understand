@@ -6,5 +6,6 @@
   <typeAliases>
       <typeAlias type="EyeUnderstand.model.MemberVO" alias="MemberVO"/>
       <typeAlias type="EyeUnderstand.model.WordVO" alias="WordVO"/>
+      <typeAlias type="EyeUnderstand.model.FavoriteVO" alias="FavoriteVO"/>
   </typeAliases>
 </configuration>
