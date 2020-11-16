@@ -1,3 +1,5 @@
+<%@page import="EyeUnderstand.model.FavoriteVO"%>
+<%@page import="java.util.List"%>
 <%@page import="EyeUnderstand.model.MemberVO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -87,12 +89,10 @@
 
 <%
   MemberVO vo = (MemberVO) session.getAttribute("vo");
-
-System.out.println("키보드페이지 ID >>>>> " + vo.getId());
-
+  FavoriteVO f_vo = (FavoriteVO) session.getAttribute("f_vo");
 %>
  <!-- 키보드 -->
-    <form action="${path}/favorite_insert.do" method="post">
+    <form action="${path}/favorite_insert.do"" method="post">
    		<input type="hidden" id="eng_text" readonly>
     	<input class="keyboardInput searchInput" id="test" type="text" name = "favoriteword" value="" required>
    		<a href="favorite_insert.do">
@@ -102,106 +102,39 @@ System.out.println("키보드페이지 ID >>>>> " + vo.getId());
    
     <div class="container">
       <div class="row">
-        <div class="col-md-2" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
+      
+      <%List<FavoriteVO> wordlist = (List<FavoriteVO>)request.getAttribute("wordlist");
+      for(int i=0; i<wordlist.size(); i++){
+      	System.out.println("wordList >>>>>>> " + wordlist.get(i).getFAVORITEWORD());%>
+      <div class="col-md-2">
+        <button class="card mb-4 shadow-sm" style="border: 0px">
             <div class="card-body">
-              <p class="card-text" style="font-size:24px;">슬퍼요</p>
-               </div>
-          </div>
-          </button>
-        </div>
-        <div class="col-md-2" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">슬퍼요</p>
-               </div>
-          </div>
-          </button>
-        </div>
-        <div class="col-md-2" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">짜증나요</p>
-               </div>
-          </div>
-          </button>
-        </div>
-        <div class="col-md-2" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">배고파요</p>
-               </div>
-          </div>
-          </button>
-        </div>
-        <div class="col-md-2" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">띵깡똥</p>
-               </div>
-          </div>
-          </button>
-        </div>
-        <div class="col-md-2" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/smiling.svg" alt="" style="width:150px; height:100px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">뿌링클</p>
-               </div>
-          </div>
-          </button>
-        </div>
+              <p class="card-text" style="font-size:24px;"><%=wordlist.get(i).getFAVORITEWORD()%></p>
             </div>
-    </div>
+          </div>
+        </button>
+      <%}%>
+      </div>
+       </div>
     
 </body>
  <script>
- 
-/* 	$(document).ready(function(){
-		$("#test").bind("click",function(){
-			alert("클릭!")
-		});
-		$("#test").trigger("click");
-		}); */
-		/* 
-
-		$(document).keydown(function(event) {
-			if (event.keyCode == 40) {
-				alert("keypressed");
-				$(document).trigger(e);
-			}
-		});
-
-		function clickevent() {
-			var e = $.Event("keydown");
-			e.keyCode = 40;
-			$(document).trigger(e);
-		} */
- function trigger(){
+/*  function trigger(){
 	    document.getElementById("test").click();
-	}
+	} */
+	
+	$("#test").trigger("click");
+	$("#test").get(0).click();
 
 		$(function auto() { //화면 다 뜨면 시작
-	<%String[] arr = (String[]) request.getAttribute("testlist");%>
+	 <%String[] arr = (String[]) request.getAttribute("testlist");%>
                var searchSource = [];
             <%for (int i = 0; i < arr.length; i++) {%>
             
                searchSource.push("<%=arr[i]%>");
-   <%}%>
+     <%}%>
          console.log(searchSource);
       
-   <%-- var searchSource = <%=arr2.get(0)%>; // 배열 형태로  --%>
       $(".searchInput").autocomplete({//오토 컴플릿트 시작
             source : searchSource, // source 는 자동 완성 대상
             select : function(event, ui) { //아이템 선택시
@@ -241,5 +174,6 @@ System.out.println("키보드페이지 ID >>>>> " + vo.getId());
 		    e.which = 40; // Enter
 		    $('#test').trigger(e);
 		});//자동으로 방향키입력 키보드안쓰고 마우스만 사용해야 먹음.
+		/* $(".card mb-4 shadow-sm").text(""); */
    </script>
 </html>

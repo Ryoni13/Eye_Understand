@@ -10,6 +10,14 @@ public class FavoriteVO {
 	public FavoriteVO() {
 	}
 	
+	
+	
+	public FavoriteVO(String fAVORITEWORD) {
+		FAVORITEWORD = fAVORITEWORD;
+	}
+
+
+
 	public FavoriteVO(String iD, String fAVORITEWORD) {
 		ID = iD;
 		FAVORITEWORD = fAVORITEWORD;

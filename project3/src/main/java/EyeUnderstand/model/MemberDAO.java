@@ -70,4 +70,19 @@ public class MemberDAO {
 		      return list2;
 		   }
 	
+	   public List<FavoriteVO> favoriteSelect(MemberVO vo) {
+		      System.out.println("FavoriteWord Select");
+		      SqlSession session = sqlSessionFactory.openSession();
+//		      List<FavoriteVO> wordlist = session.selectList("favoriteSelect");
+//		      String[] list3 = new String[wordlist.size()]; 
+//		      for (int i=0; i<wordlist.size(); i++) {
+//		         list3[i] = wordlist.get(i).getFAVORITEWORD();
+//		      }
+		      System.out.println("fa_select ID >>>>> " + vo.getId());
+		      
+		      List<FavoriteVO> list3 = session.selectList("favoriteSelect", vo);
+		      session.close();
+		      System.out.println("select 완료");
+		      return list3;
+		   }
 }

@@ -16,15 +16,22 @@
 		select * from word where words like ('${serchInput}%')
 	</select>
 	
-	<!-- <select id = "" >
-	    select POINT 
-	    
-	</select> -->
-	
+	<select id="favoriteSelect" parameterType="MemberVO" resultType="FavoriteVO">
+		  <![CDATA[
+		  SELECT FAVORITEWORD
+		  FROM FAVORITE
+		  WHERE ID=#{id, jdbcType=VARCHAR}
+		  and ROWNUM <= 5
+		  ORDER BY POINT DESC
+			]]> 
+	</select>
+		
 	<update id="favoriteInsert" parameterType="FavoriteVO"> 
-        MERGE INTO favorite USING DUAL ON (FAVORITEWORD = #{FAVORITEWORD})
-		WHEN MATCHED THEN UPDATE SET POINT = (select POINT from favorite where FAVORITEWORD = #{FAVORITEWORD})+1
-		WHEN NOT MATCHED THEN INSERT (ID, FAVORITEWORD, POINT) VALUES (#{ID},#{FAVORITEWORD},#{POINT})
+        MERGE INTO favorite USING DUAL ON (FAVORITEWORD = #{FAVORITEWORD, jdbcType=VARCHAR})
+		WHEN MATCHED THEN UPDATE SET POINT = (select POINT from favorite where FAVORITEWORD = #{FAVORITEWORD, jdbcType=VARCHAR})+1
+		WHEN NOT MATCHED THEN INSERT (ID, FAVORITEWORD, POINT) VALUES (#{ID, jdbcType=VARCHAR},#{FAVORITEWORD, jdbcType=VARCHAR},#{POINT, jdbcType=INTEGER})
     </update>
+    
+	<!-- <update id=""></update> -->
 
 </mapper>

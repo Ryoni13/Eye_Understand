@@ -21,10 +21,26 @@ public class EyeUnderstandController {
 	@Autowired
 	private MemberDAO dao;
 
-	@RequestMapping("/list.do")
+	/*@RequestMapping("/list.do")
 	public String list(Model model) {
 		String[] list3 = dao.getTestList();
 		model.addAttribute("testlist", list3);
+		return "EyeUnderstand/Autocomplete";
+	}*/
+	
+	@RequestMapping("/list.do")
+	public String wordlist(Model model, FavoriteVO f_vo, HttpSession session) {
+		String[] list3 = dao.getTestList();
+		MemberVO vo = (MemberVO)session.getAttribute("vo");
+		List<FavoriteVO> list4 = dao.favoriteSelect(vo);
+		if (list4 == null) {
+			System.out.println("List Null");
+		}else {
+			System.out.println("ListListListListListListListListListList" + list4);
+		}
+		model.addAttribute("testlist", list3);
+		model.addAttribute("wordlist", list4);
+		
 		return "EyeUnderstand/Autocomplete";
 	}
 	
@@ -44,11 +60,6 @@ public class EyeUnderstandController {
 		session.setAttribute("vo", vo);
 		
 //		model.addAttribute("vo", f_vo);
-		
-		return "redirect:list.do";
-	}
-	@RequestMapping("/favorite_update.do")
-	public String favorite_update(HttpServletRequest request , HttpSession session, RedirectAttributes rttr, Model model) {
 		
 		return "redirect:list.do";
 	}
@@ -83,6 +94,7 @@ public class EyeUnderstandController {
 
 	@RequestMapping("/choice.do")
 	public String choice() {
+		
 		return "EyeUnderstand/choice";
 	}
 
