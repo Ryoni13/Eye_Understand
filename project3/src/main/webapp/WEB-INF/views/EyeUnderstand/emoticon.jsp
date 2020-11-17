@@ -4,7 +4,8 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -15,203 +16,316 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
     <!-- Bootstrap core CSS -->
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        html,
+        body {
+            height: 100%;
+            overflow: hidden
         }
-      }
-      @font-face {
-    font-family: 'KOTRA_BOLD-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
+        .h-div {
+            height: 96%;
+            border: 3px #f99 solid
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        @font-face {
+            font-family: 'KOTRA_BOLD-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .card {
+            border-radius: 21px 21px 21px 21px;
+        }
+
+        .card {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            /* 부드러운 모션을 위해 추가*/
+        }
+
+        .card:hover {
+            transform: scale(1.4);
+            -webkit-transform: scale(1.4);
+            -moz-transform: scale(1.4);
+            -ms-transform: scale(1.4);
+            -o-transform: scale(1.4);
+        }
+
+        .img {
+            width: 325px;
+            height: 280px;
+            overflow: hidden
+        }
     </style>
     <!-- Custom styles for this template -->
     <link href="resources/css/album.css" rel="stylesheet">
-  </head>
-  <body style="font-family: 'KOTRA_BOLD-Bold';">
-    <header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+</head>
+
+<body style="font-family: 'KOTRA_BOLD-Bold'; background-color:#343a40;">
+    <header style="height:30%;">
+        <div class="container text-center" style="height:100%">
+            <div style="height: 60%; padding: 5%;">
+                <h1 style="color: white;">의사표현</h1>
+                <p class="lead text-muted" style="color: whitesmoke;">감정 또는 요청 </p>
+            </div>
+            <div style="height: 45%;">
+                <a href="request.do" class="btn btn-primary my-2"
+                    style="font-size:250%; width: 30%; height: 80%; line-height: 250%; margin-right: 25%; color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd;">요청</a>
+                <a href="emoticon.do" class="btn btn-secondary my-2"
+                    style="font-size:250%; width: 30%; height: 80%; line-height: 250%;">감정</a>
+            </div>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-<!--   <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-      <a href="cover.do" class="navbar-brand d-flex align-items-center" style="font-size:24px;">
-        <strong>Eye-contect</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div> -->
-</header>
+    </header>
 
-<main role="main">
+    <main role="main" style="height: 80%;">
+        <div class="album" style="height:100%; padding-top: 4%; background-color:#343a40;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="card mb-4 shadow-sm smiling" value="행복해요"
+                            style="border: 0px; height: 80%; width: 80%;" onclick="location.href='#'">
+                            <div style="padding: 15%;">
+                                <div>
+                                    <img src="resources/img/smiling.svg" alt="" style=" width:100%; height:80%;">
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size:20px;">행복해요</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
 
-  <section class="jumbotron text-center" style="height:300px; padding-top: 50px;">
-    <div class="container" style="height:200px">
-      <h1>의사표현</h1>
-      <p class="lead text-muted">감정 또는 요청 </p>
-      <p>
-        <a href="request.do" class="btn btn-primary my-2" style="padding-top:15px; font-size:50px; color: #424242; width:150px; height:100px; margin-right:100px; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color:#deecdd">요청</a>
-        <a href="emoticon.do" class="btn btn-secondary my-2" style="padding-top:15px; font-size:50px; width:150px; height:100px;">감정</a>
-      </p>
-    </div>
-  </section> 
+                    <div class="col-md-3">
+                        <button class="card mb-4 shadow-sm crying" value="슬퍼요"
+                            style="border: 0px; height: 80%; width: 80%;" onclick="location.href='#'">
+                            <div style="padding: 15%;">
+                                <div>
+                                    <img src="resources/img/crying.svg" alt="" style=" width:100%; height:80%;">
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size:20px;">슬퍼요</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
+                    <div class="col-md-3">
+                        <button class="card mb-4 shadow-sm confused" value="짜증나요"
+                            style="border: 0px; height: 80%; width: 80%;" onclick="location.href='#'">
+                            <div style="padding: 15%;">
+                                <div>
+                                    <img src="resources/img/confused.svg" alt="" style=" width:100%; height:80%;">
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size:20px;">짜증나요</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
 
-      <div class="row">
-      
-        <div class="col-md-3" >
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/smiling.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">행복해요</p>
-              
-              <!-- <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <div class="col-md-3">
+                        <button class="card mb-4 shadow-sm in_love" value="사랑해요"
+                            style="border: 0px; height: 80%; width: 80%;" onclick="location.href='#'">
+                            <div style="padding: 15%;">
+                                <div>
+                                    <img src="resources/img/in-love.svg" alt="" style=" width:100%; height:80%;">
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size:20px;">사랑해요</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="card mb-4 shadow-sm sleeping" value="졸려요"
+                            style="border: 0px; height: 80%; width: 80%;" onclick="location.href='#'">
+                            <div style="padding: 15%;">
+                                <div>
+                                    <img src="resources/img/sleeping.svg" alt="" style=" width:100%; height:80%;">
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size:20px;">졸려요</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <button class="card mb-4 shadow-sm grinning" value="고마워요"
+                            style="border: 0px; height: 80%; width: 80%;" onclick="location.href='#'">
+                            <div style="padding: 15%;">
+                                <div>
+                                    <img src="resources/img/grinning.svg" alt="" style=" width:100%; height:80%;">
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size:20px;">고마워요</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="card mb-4 shadow-sm laughing" value="멋져요"
+                            style="border: 0px; height: 80%; width: 80%;" onclick="location.href='#'">
+                            <div style="padding: 15%;">
+                                <div>
+                                    <img src="resources/img/laughing.svg" alt="" style=" width:100%; height:80%;">
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size:20px;">멋져요</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="card mb-4 shadow-sm joy" value="즐거워요"
+                            style="border: 0px; height: 80%; width: 80%;" onclick="location.href='#'">
+                            <div style="padding: 15%;">
+                                <div>
+                                    <img src="resources/img/joy.svg" alt="" style=" width:100%; height:80%;">
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size:20px;">즐거워요</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
                 </div>
-                <small class="text-muted">9 mins</small>
-              </div> -->
             </div>
-          </div>
-          </button>
         </div>
-        <div class="col-md-3">
-        <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/crying.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">슬퍼요</p>
-            </div>
-          </div>
-          </button>
-        </div>
-        <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-            <img src="resources/img/confused.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">짜증나요</p>
-            </div>
-          </div>
-          </button>
-        </div>
+    </main>
+</body>
 
-        <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/in-love.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">사랑해요</p>
-            </div>
-          </div>
-          </button>
-        </div>
-        
-        <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/sleeping.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">졸려요</p>
-            </div>
-          </div>
-          </button>
-        </div>
-        
-       <!--  <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">목말라요</p>
-            </div>
-          </div>
-          </button>
-        </div> -->
+<script>
+    function speak(text, opt_prop) {
+        if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+            alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+            return
+        }
+        console.log(opt_prop)
 
-        <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/grinning.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">고마워요</p>
-            </div>
-          </div>
-          </button>
-        </div>
-        
-        <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/laughing.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">멋져요</p>
-            </div>
-          </div>
-          </button>
-        </div>
-        
-        <div class="col-md-3">
-          <button class="card mb-4 shadow-sm" style="border: 0px" onclick="location.href='#'">
-          <div>
-           <img src="resources/img/joy.svg" alt="" style="padding-top:20px; width:250px; height:200px;">
-            <div class="card-body">
-              <p class="card-text" style="font-size:24px;">기뻐요</p>
-            </div>
-          </div>
-          </button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+        window.speechSynthesis.cancel() // 현재 읽고있다면 초기화
 
-</main>
+        const prop = opt_prop || {}
 
-<!-- <footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
-  </div>
-</footer> -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="resources/js/bootstrap.bundle.min.js"></script>
+        const speechMsg = new SpeechSynthesisUtterance()
+        speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+        speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+        speechMsg.lang = prop.lang || "ko-KR"
+        speechMsg.text = text
+
+        // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+        window.speechSynthesis.speak(speechMsg)
+    }
+
+    // 이벤트 영역
+    const smiling = document.getElementsByClassName("smiling")[0]
+    const crying = document.getElementsByClassName("crying")[0]
+    const confused = document.getElementsByClassName("confused")[0]
+    const in_love = document.getElementsByClassName("in_love")[0]
+    const sleeping = document.getElementsByClassName("sleeping")[0]
+    const grinning = document.getElementsByClassName("grinning")[0]
+    const laughing = document.getElementsByClassName("laughing")[0]
+    const joy = document.getElementsByClassName("joy")[0]
+
+    smiling.addEventListener("click", e => {
+        speak(smiling.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    crying.addEventListener("click", e => {
+        speak(crying.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    confused.addEventListener("click", e => {
+        speak(confused.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    in_love.addEventListener("click", e => {
+        speak(in_love.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    sleeping.addEventListener("click", e => {
+        speak(sleeping.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    grinning.addEventListener("click", e => {
+        speak(grinning.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    laughing.addEventListener("click", e => {
+        speak(laughing.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+
+    joy.addEventListener("click", e => {
+        speak(joy.value, {
+            rate: 0.8,
+            pitch: 1.2,
+            lang: "ko-KR"
+        })
+    })
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="resources\vendor\jquery\jquery.slim.min.js"><\/script>')</script>
+<script src="resources\js\bootstrap.bundle.min.js"></script>
+
 </html>
