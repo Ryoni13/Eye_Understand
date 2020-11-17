@@ -168,7 +168,7 @@ html, body {
 					<%List<FavoriteVO> wordlist = (List<FavoriteVO>)request.getAttribute("wordlist");
 			      			for(int i=0; i<wordlist.size(); i++){%>
 					<td><button class="button" style="height: 200px; width: 200px; margin-right:10px; border-radius:25px; font-size:20px; font-family: 'KOTRA_BOLD-Bold'; font-weight:800;"
-						 id="<%=wordlist.get(i).getFAVORITEWORD()%>" value="<%=wordlist.get(i).getFAVORITEWORD()%>"><%=wordlist.get(i).getFAVORITEWORD()%></button></td>
+						 id="<%=i+1%>" value="<%=wordlist.get(i).getFAVORITEWORD()%>"><%=wordlist.get(i).getFAVORITEWORD()%></button></td>
 					<%}%>
 				</table>
 				<% String temp = " ";%>
@@ -230,13 +230,8 @@ html, body {
 		/* $(".card mb-4 shadow-sm").text(""); */
 		
 </script>
-<script type="text/javascript">
-$('.button').click(function(){
-    var temp = $(this).attr("id");
-});
-</script>
-<script type="text/javascript">
-    window.onload = function () {
+
+<script>
         const text = document.getElementById("test")
         const btnclick = document.getElementById("btnclick")
         btnclick.addEventListener("click", e => {
@@ -245,20 +240,73 @@ $('.button').click(function(){
                 pitch: 1.2,
                 lang: "ko-KR"
             })
-
-            const temp = document.getElementById(temp)
-            console.log(temp)
-            const btnclick = document.getElementById("btnclick")
-            btnclick.addEventListener("click", e => {
-                speak(temp.value, {
-                    rate: 0.8,
-                    pitch: 1.2,
-                    lang: "ko-KR"
-                })
-            })
         })
-    }
 </script>
+<script>
+	$('.button').click(function(){
+	    var temp = $(this).attr("value")
+	    		const button = document.getElementById("1")
+				button.addEventListener("click", e => {
+					speak(temp, {
+						rate: 0.8,
+					    pitch: 1.2,
+					    lang: "ko-KR"
+					    })
+					})
+		});
+	
+	$('.button').click(function(){
+	    var temp = $(this).attr("value")
+	    		const button = document.getElementById("2")
+				button.addEventListener("click", e => {
+					speak(temp, {
+						rate: 0.8,
+					    pitch: 1.2,
+					    lang: "ko-KR"
+					    })
+					})
+		});
+	
+	$('.button').click(function(){
+	    var temp = $(this).attr("value")
+	    		const button = document.getElementById("3")
+				button.addEventListener("click", e => {
+					speak(temp, {
+						rate: 0.8,
+					    pitch: 1.2,
+					    lang: "ko-KR"
+					    })
+					})
+		});
+	
+	$('.button').click(function(){
+	    var temp = $(this).attr("value")
+	    		const button = document.getElementById("4")
+				button.addEventListener("click", e => {
+					speak(temp, {
+						rate: 0.8,
+					    pitch: 1.2,
+					    lang: "ko-KR"
+					    })
+					})
+		});
+	
+	$('.button').click(function(){
+	    var temp = $(this).attr("value")
+	    		const button = document.getElementById("5")
+				button.addEventListener("click", e => {
+					speak(temp, {
+						rate: 0.8,
+					    pitch: 1.2,
+					    lang: "ko-KR"
+					    })
+					})
+		});
+		
+
+
+</script>
+
 <script>
     function speak(text, opt_prop) {
         if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
