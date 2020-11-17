@@ -100,12 +100,12 @@ function VKI_buildKeyboardInputs() {
               ex.id = keyid;
             } else keyid = ex.id;
             var keybut = document.createElement('img');
-                keybut.src = "http://www.blueb.co.kr/SRC/javascript/image8/keyboard.png";
+                keybut.src = "resources/png/keyboard.png";
                 keybut.alt = "Keyboard interface";
                 keybut.className = "keyboardInputInitiator";
                 keybut.title = "Display graphical keyboard interface";
-                
-                
+                keybut.style = "position:absolute; left:15%; top:37%; width:70%;"
+                	
                 keybut.onclick = (function(a) { return function() { self.VKI_show(a); }; })(keyid);
 	            ex.parentNode.insertBefore(keybut, ex.nextSibling);
 	            if (!window.sidebar && !window.opera) {
