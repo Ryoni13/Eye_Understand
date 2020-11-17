@@ -17,10 +17,8 @@
 	</select>
 	
 	<select id="favoriteSelect" parameterType="MemberVO" resultType="FavoriteVO">
-		  <![CDATA[
-		select favoriteword, point, dense_rank() over(order by point desc)
-		rank from favorite where ID=#{id, jdbcType=VARCHAR}
-			]]> 
+		 SELECT favoriteword FROM (SELECT favoriteword FROM favorite WHERE id=#{id, jdbcType=VARCHAR} ORDER BY point DESC) 
+		 WHERE ROWNUM BETWEEN 1 AND 5
 	</select>
 		
 	<update id="favoriteInsert" parameterType="FavoriteVO"> 

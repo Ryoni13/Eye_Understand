@@ -8,6 +8,14 @@ public class MemberVO {
 
 	}
 
+	
+	
+	public MemberVO(String id) {
+		this.id = id;
+	}
+
+
+
 	public MemberVO(String mem_id, String mem_pw) {
 		id = mem_id;
 		pw = mem_pw;
