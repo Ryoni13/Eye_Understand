@@ -83,7 +83,7 @@ html, body {
   %>
    <div class="d-md-flex flex-md-equal w-100 " style="height: 100%;">
       <button style="background-color: #343a40; border: 0px;"
-         onclick="location.href='emoticon.do'">
+         onclick="location.href='request.do'">
          <div class=" text-center overflow-hidden"
             style="background-color: #343a40;">
             <div class="">

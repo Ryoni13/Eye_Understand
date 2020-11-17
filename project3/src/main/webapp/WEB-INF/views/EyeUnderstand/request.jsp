@@ -102,17 +102,21 @@ html, body {
 </head>
 
 <body style="font-family: 'KOTRA_BOLD-Bold'; background-color: #343a40;">
-	<header style="height: 30%;">
+	<header style="height: 30%;" >
+		<a href="list.do">
+		<!-- <img src ="resources/png/keyboardicon.png" width="100px" height="100px;" style="margin-top:20px; margin-right:50px; float:right;"> -->
+	<h3 style="color: white; margin-top:20px; margin-right:50px; float:right;">keyboard</h3>
+		</a>
 		<div class="container text-center" style="height: 100%">
 			<div style="height: 60%; padding: 5%;">
 				<h1 style="color: white;">의사표현</h1>
 				<p class="lead text-muted" style="color: whitesmoke;">감정 또는 요청</p>
 			</div>
 			<div style="height: 45%;">
-				<a href="request.do" class="btn btn-secondary my-2"
-					style="font-size: 250%; width: 30%; height: 80%; line-height: 250%; margin-right: 25%;">요청</a>
-				<a href="emoticon.do" class="btn btn-primary my-2"
-					style="font-size: 250%; width: 30%; height: 80%; line-height: 250%; color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color: #deecdd;">감정</a>
+				<a href="request.do" class="btn btn-primary my-2"
+					style="font-size: 250%; width: 30%; height: 80%; line-height: 250%; margin-right: 25%; color: #424242; background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); border-color: #deecdd;">요청</a>
+				<a href="emoticon.do" class="btn btn-secondary my-2"
+					style="font-size: 250%; width: 30%; height: 80%; line-height: 250%;">감정</a>
 			</div>
 		</div>
 	</header>
