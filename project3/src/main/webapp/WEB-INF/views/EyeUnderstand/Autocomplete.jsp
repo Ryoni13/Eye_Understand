@@ -117,7 +117,7 @@ html, body {
             -o-transform: scale(1.4);
         }
         
-        .button {
+        #btnclick {
             transform: scale(1);
             -webkit-transform: scale(1);
             -moz-transform: scale(1);
@@ -127,7 +127,7 @@ html, body {
             /* 부드러운 모션을 위해 추가*/
         }
 
-        .button:hover {
+        #btnclick:hover {
             transform: scale(1.4);
             -webkit-transform: scale(1.4);
             -moz-transform: scale(1.4);
@@ -171,7 +171,6 @@ html, body {
 						 id="<%=i+1%>" value="<%=wordlist.get(i).getFAVORITEWORD()%>"><%=wordlist.get(i).getFAVORITEWORD()%></button></td>
 					<%}%>
 				</table>
-				<% String temp = " ";%>
 			</div>
 		</div>
 	</div>
@@ -243,65 +242,67 @@ html, body {
         })
 </script>
 <script>
-	$('.button').click(function(){
-	    var temp = $(this).attr("value")
-	    		const button = document.getElementById("1")
-				button.addEventListener("click", e => {
-					speak(temp, {
-						rate: 0.8,
-					    pitch: 1.2,
-					    lang: "ko-KR"
-					    })
-					})
-		});
+ // $('.button').click(function(){
+ //   var temp1 = $(this).attr("value")
+ //   const button = document.getElementById("1")
+//		button.addEventListener("click", e => {
+//			speak(temp1, {
+//				rate: 0.6,
+//				pitch: 1.2,
+//				lang: "ko-KR"
+//			})
+//		})
+//	});
+ 
+  	$('.button').click(function(){
+  		var temp1 = $(this).attr("value")
+  		const button = document.getElementById("1")
+  		speak(temp1, {
+  			rate:0.6,
+  			pitch:1.2,
+  			lang:"ko-KR"
+  		})
+  	})
 	
-	$('.button').click(function(){
-	    var temp = $(this).attr("value")
-	    		const button = document.getElementById("2")
-				button.addEventListener("click", e => {
-					speak(temp, {
-						rate: 0.8,
-					    pitch: 1.2,
-					    lang: "ko-KR"
-					    })
-					})
-		});
+  	$('.button').click(function(){
+  		var temp2 = $(this).attr("value")
+  		const button = document.getElementById("2")
+  		speak(temp2, {
+  			rate:0.6,
+  			pitch:1.2,
+  			lang:"ko-KR"
+  		})
+  	})
 	
-	$('.button').click(function(){
-	    var temp = $(this).attr("value")
-	    		const button = document.getElementById("3")
-				button.addEventListener("click", e => {
-					speak(temp, {
-						rate: 0.8,
-					    pitch: 1.2,
-					    lang: "ko-KR"
-					    })
-					})
-		});
+  	$('.button').click(function(){
+  		var temp3 = $(this).attr("value")
+  		const button = document.getElementById("3")
+  		speak(temp3, {
+  			rate:0.6,
+  			pitch:1.2,
+  			lang:"ko-KR"
+  		})
+  	})
 	
-	$('.button').click(function(){
-	    var temp = $(this).attr("value")
-	    		const button = document.getElementById("4")
-				button.addEventListener("click", e => {
-					speak(temp, {
-						rate: 0.8,
-					    pitch: 1.2,
-					    lang: "ko-KR"
-					    })
-					})
-		});
+  	$('.button').click(function(){
+  		var temp4 = $(this).attr("value")
+  		const button = document.getElementById("4")
+  		speak(temp4, {
+  			rate:0.6,
+  			pitch:1.2,
+  			lang:"ko-KR"
+  		})
+  	})
 	
-	$('.button').click(function(){
-	    var temp = $(this).attr("value")
-	    		const button = document.getElementById("5")
-				button.addEventListener("click", e => {
-					speak(temp, {
-						rate: 0.8,
-					    pitch: 1.2,
-					    lang: "ko-KR"
-					    })
-					})
-		});
+  	$('.button').click(function(){
+  		var temp5 = $(this).attr("value")
+  		const button = document.getElementById("5")
+  		speak(temp5, {
+  			rate:0.6,
+  			pitch:1.2,
+  			lang:"ko-KR"
+  		})
+  	})
 		
 
 
@@ -313,7 +314,7 @@ html, body {
             alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
             return
         }
-        console.log(opt_prop)
+        // console.log(opt_prop)
 
         window.speechSynthesis.cancel() // 현재 읽고있다면 초기화
 
