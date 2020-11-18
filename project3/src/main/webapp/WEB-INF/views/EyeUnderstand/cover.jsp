@@ -45,6 +45,42 @@
       font-weight: normal;
       font-style: normal;
     }
+    
+	.cover-heading {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            /* 부드러운 모션을 위해 추가*/
+        }
+
+	.cover-heading:hover {
+            transform: scale(1.4);
+            -webkit-transform: scale(1.4);
+            -moz-transform: scale(1.4);
+            -ms-transform: scale(1.4);
+            -o-transform: scale(1.4);
+        }
+        
+    .masthead-brand {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            /* 부드러운 모션을 위해 추가*/
+        }
+        
+    .masthead-brand:hover {
+            transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            -moz-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            -o-transform: scale(1.5);
+        }
   </style>
 
   <!-- Custom styles for this template -->
@@ -62,11 +98,12 @@
     </header>
 
     <main role="main" class="inner cover">
-      <h3 class="cover-heading" style="margin-top: 30%;">간단한 감정 표현부터 하고싶은 말까지 <br>당신의 눈으로 편리하게
+    <a id="title" href="http://localhost:8083/myapp/choice.do" style="text-decoration:none">
+      <h3 class="cover-heading" style="margin-top: 30%; color:black;">간단한 감정 표현부터 하고싶은 말까지 <br>당신의 눈으로 편리하게
         의사표현할 수 있어요.</h3>
-
+	</a>
       <p>
-        <a href="choice.do">
+        <a id="page" href="http://localhost:9000/choice">
           <img class="img" src="resources/img/eye.svg" alt="" style="width:50%; margin-top: 15%;">
         </a>
       </p>
@@ -82,10 +119,15 @@
       //[1] img에 마우스 오버시 이미지 변경
       $('img').mouseover(function () {
           $(this).attr("src", "resources/img/visibility.svg");
+          $(this).attr("id", "on");
       }).mouseout(function(){
         $(this).attr("src", "resources/img/eye.svg");
+        $(this).attr("id", "off");
       });
   });
+  
+  
+  
 </script>
 
 </html>
