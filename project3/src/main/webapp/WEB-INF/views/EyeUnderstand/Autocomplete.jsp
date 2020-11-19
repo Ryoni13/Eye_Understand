@@ -147,6 +147,9 @@ html, body {
 	<!-- 키보드 -->
 <div>
 	<div id="top_top" style="width: 100%; height: 40%;">
+		<a href="request.do" style="float:left; padding:1%; border-radius:15px; margin-left:4.5%; width:10%;">
+			<img id="keyboard" alt="" src="resources/png/pngegg.png" style="width:100%;">
+		</a>
 		<div style="width: 100%; height: 100%; border: soild; 1 px; margin-left: 20%; margin-top: 3%;">
 			<form action="${path}/favorite_insert.do" " method="post">
 				<input type="hidden" id="eng_text" readonly> <input
