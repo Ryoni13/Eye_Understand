@@ -73,6 +73,24 @@
             -ms-transform: scale(1.4);
             -o-transform: scale(1.4);
         }
+        
+		#keyboard {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            /* 부드러운 모션을 위해 추가*/
+        }
+
+        #keyboard:hover {
+            transform: scale(1.4);
+            -webkit-transform: scale(1.4);
+            -moz-transform: scale(1.4);
+            -ms-transform: scale(1.4);
+            -o-transform: scale(1.4);
+        }
 
         .img {
             width: 325px;
@@ -87,7 +105,9 @@
 <body style="font-family: 'KOTRA_BOLD-Bold'; background-color:#343a40;">
     <header style="height: 30%;" >
 		<a href="list.do">
-		<h3 style="color: white; margin-top:20px; margin-right:50px; float:right;">keyboard</h3>
+			<div>
+				<img id="keyboard" alt="" src="resources/png/keyboard_pic.png" style="width:5%; float:right; background-color:white; padding:1%; border-radius:15px; margin:3%; margin-right:10%">
+			</div>
 		</a>
         <div class="container text-center" style="height:100%">
             <div style="height: 60%; padding: 5%;">
